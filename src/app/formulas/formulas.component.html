@@ -1,0 +1,26 @@
+﻿<div class="formula-input-container">
+  <input
+    class="formula-input-height formula-input-width"
+    [formControl]="formControl"
+    type="text"
+    (focus)="selectorVisible = true;"
+    (focusout)="unfocusInput()"
+    (keyup)="checkBracket($event)"
+  >
+  <select
+    *ngIf="selectorVisible && predictions.length"
+    class="formula-select"
+    multiple
+    [size]="predictions.length >= selectorLength ? selectorLength : predictions.length"
+  >
+    <option class="formula-input-height formula-hidden" selected disabled></option>
+    <option
+      *ngFor="let predict of predictions"
+      class="formula-input-height"
+      [value]="predict"
+      (click)="execAutocomplete($event)"
+    >
+      {{ predict }}
+    </option>
+  </select>
+</div>
