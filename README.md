@@ -2,26 +2,35 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.11.
 
-## Development server
+## Formulas module
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Formulas module and everything associated with it is located at `src/app/formulas/`
 
-## Code scaffolding
+### Component inputs
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+`[formControl]` - FormControl associated with component's input
 
-## Build
+`[selectorLength]` - max size of component's hints selector
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Component styles
 
-## Running unit tests
+`.formula-input-width` - class for setting input's width (affects selector's width)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+`.formula-input-height` - class for setting input's (and selector options') height
 
-## Running end-to-end tests
+`.formula-input-container` - class for stylization component's root div
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+`.formula-input` - class for stylization component's input
 
-## Further help
+`.formula-select` - class for stylization component's selector
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Usage example
+
+(Note: usage example is also provided in `app.component.html`)
+
+```angular2html
+<app-formulas
+  [formControl]="sample_form_control"
+  [selectorLength]="sample_hints_count"
+></app-formulas>
+```
